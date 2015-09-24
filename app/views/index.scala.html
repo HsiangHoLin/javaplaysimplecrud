@@ -2,6 +2,8 @@
 
 @main("Welcome to Play") {
 
-    @play20.welcome(message, style = "Java")
-
+    <form action="@routes.Application.addPerson()" method="post">
+        <input type="text" name="name"/>
+        <button>Add</button>
+    </form>
 }

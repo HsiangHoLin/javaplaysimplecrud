@@ -1,6 +1,7 @@
 @(message: String)
 
 @main("Welcome to Play") {
+    <div class="persons"></div>
     <ul id="persons"></ul>
     <form action="@routes.Application.addPerson()" method="post">
         <input type="text" name="name"/>

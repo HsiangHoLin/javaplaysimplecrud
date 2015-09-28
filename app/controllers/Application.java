@@ -22,6 +22,12 @@ public class Application extends Controller {
         return redirect(routes.Application.index());
     }
 
+    public Result delPerson(String personId) {
+        Person person =  Ebean.find(Person.class, personId);
+        person.delete();
+        return redirect(routes.Application.index());
+    }
+
     public Result getPersons() {
         List<Person> persons =  Ebean.find(Person.class).findList();
         return ok(toJson(persons));

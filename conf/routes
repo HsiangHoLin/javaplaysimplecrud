@@ -9,6 +9,8 @@ POST    /person                     controllers.Application.addPerson()
 
 POST    /delperson/:id              controllers.Application.delPerson(id: String)
 
+POST    /upperson/:id              controllers.Application.upPerson(id: String)
+
 GET     /persons                    controllers.Application.getPersons()
 
 # Map static resources from the /public folder to the /assets URL path

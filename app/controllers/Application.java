@@ -28,6 +28,14 @@ public class Application extends Controller {
         return redirect(routes.Application.index());
     }
 
+    public Result upPerson(String personId) {
+        Person person =  Ebean.find(Person.class, personId);
+        Person tmp = Form.form(Person.class).bindFromRequest().get();
+        person.name = tmp.name;
+        person.save();
+        return redirect(routes.Application.index());
+    }
+
     public Result getPersons() {
         List<Person> persons =  Ebean.find(Person.class).findList();
         return ok(toJson(persons));
